@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ziggy</string>
+    <string name="balanceTitle"></string>
 </resources>
