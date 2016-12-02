@@ -65,6 +65,7 @@
         android:textSize="12pt"/>
 
     <ListView
+        android:id="@+id/children"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 

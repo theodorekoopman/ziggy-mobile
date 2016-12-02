@@ -12,6 +12,7 @@
     <string name="investec_account_label">Investec Account</string>
     <string name="available_balance_label">Available Balance</string>
 
+
     <!-- captions -->
     <string name="login_page_description">Please log in with your Investec Online Password.</string>
     <string name="login_button_caption">Login</string>

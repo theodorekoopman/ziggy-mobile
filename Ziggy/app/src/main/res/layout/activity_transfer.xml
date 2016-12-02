@@ -24,7 +24,7 @@
         android:layout_marginBottom="25px"/>
 
     <ListView
-        android:id="@+id/children"
+        android:id="@+id/chores"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
