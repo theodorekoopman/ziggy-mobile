@@ -27,10 +27,11 @@ public class BaseResponseHandler<T> extends AsyncHttpResponseHandler {
     private Context activity;
     private Class<T> classType;
     private T instance;
+    private String responseText;
 
     @Override
     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-        String responseText = new String(responseBody, StandardCharsets.UTF_8);
+        setResponseText(new String(responseBody, StandardCharsets.UTF_8));
 
         Gson gson = new Gson();
         this.setInstance(gson.fromJson(responseText, getClassType()));
@@ -39,7 +40,7 @@ public class BaseResponseHandler<T> extends AsyncHttpResponseHandler {
 
     @Override
     public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-        Toast.makeText(this.getActivity(), "Failed", Toast.LENGTH_LONG);
+        Toast.makeText(this.getActivity(), "Something went wrong, please try again", Toast.LENGTH_LONG);
     }
 
     protected Context getActivity() {
@@ -64,5 +65,13 @@ public class BaseResponseHandler<T> extends AsyncHttpResponseHandler {
 
     protected void setInstance(T instance) {
         this.instance = instance;
+    }
+
+    public String getResponseText() {
+        return responseText;
+    }
+
+    protected void setResponseText(String responseText) {
+        this.responseText = responseText;
     }
 }

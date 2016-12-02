@@ -29,8 +29,13 @@ public class LoginResponseHandler extends BaseResponseHandler<Portfolio> {
         super.onSuccess(statusCode, headers, responseBody);
         Toast.makeText(this.getActivity(), "Success", Toast.LENGTH_LONG);
 
-        Intent intent = new Intent(this.getActivity(), BalanceActivity.class);
-        this.getActivity().startActivity(intent);
+        if( !this.getResponseText().contains("User not found or password incorrect") ) {
+            Intent intent = new Intent(this.getActivity(), BalanceActivity.class);
+            this.getActivity().startActivity(intent);
+        }
+        else {
+            Toast.makeText(this.getActivity(), "Access Denied", Toast.LENGTH_LONG);
+        }
 
     }
 
