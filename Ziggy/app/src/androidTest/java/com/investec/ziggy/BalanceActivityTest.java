@@ -27,23 +27,28 @@ public class BalanceActivityTest {
     public ActivityTestRule<TransferActivity> transferActivity = new ActivityTestRule<TransferActivity>(TransferActivity.class);
 
     @Test
-    public void shouldDisplayParentBalance() {
-        onView(withId(R.id.login_button)).perform(click());
+    public void shouldDisplayTitle() {
         onView(withId(R.id.title)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void shouldDisplayAccountNumber() {
+    public void shouldDisplayParentBalance() {
+        onView(withId(R.id.parentBalance)).check(matches(isDisplayed()));
+    }
 
+    @Test
+    public void shouldDisplayAccountNumber() {
+        onView(withId(R.id.accountNumber)).check(matches(isDisplayed()));
     }
 
     @Test
     public void shouldDisplayChildren() {
-
+        onView(withId(R.id.children)).check(matches(isDisplayed()));
     }
 
     @Test
     public void shouldLaunchTransferActivity() {
-
+        onView(withId(R.id.children)).perform(click());
+        onView(withId(R.id.title)).check(matches(isDisplayed()));
     }
 }

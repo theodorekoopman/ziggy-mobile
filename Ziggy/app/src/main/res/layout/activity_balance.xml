@@ -49,7 +49,7 @@
             android:text="@string/available_balance_label"/>
 
         <TextView
-            android:id="@+id/availableBalance"
+            android:id="@+id/parentBalance"
             android:textAlignment="textEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

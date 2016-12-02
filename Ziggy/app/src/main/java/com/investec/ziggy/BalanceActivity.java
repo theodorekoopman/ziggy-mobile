@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.investec.ziggy.adapters.ChildBalanceAdapter;
+import com.investec.ziggy.listeners.ChildSelectionListener;
 import com.investec.ziggy.models.ChildBalanceViewModel;
 
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.List;
 public class BalanceActivity extends AppCompatActivity {
 
     private List<ChildBalanceViewModel> childrenList;
-    private ArrayAdapter<ChildBalanceViewModel> childrenAdapter;
+    private ChildBalanceAdapter childrenAdapter;
     private ListView childrenListView;
 
     @Override
@@ -26,8 +28,10 @@ public class BalanceActivity extends AppCompatActivity {
         this.getChildrenList().add(new ChildBalanceViewModel("Kayleb", "R1000", "kayleb"));
         this.getChildrenList().add(new ChildBalanceViewModel("Meekah", "R1000", "meekah"));
 
-        this.setChildrenAdapter(new ArrayAdapter<>(this, R.layout.child_balance, getChildrenList()));
+        this.setChildrenAdapter(new ChildBalanceAdapter(this, getChildrenList()));
         this.setChildrenListView((ListView)findViewById(R.id.children));
+        this.getChildrenListView().setAdapter(this.getChildrenAdapter());
+        this.getChildrenListView().setOnItemClickListener(new ChildSelectionListener(this));
     }
 
     private List<ChildBalanceViewModel> getChildrenList() {
@@ -38,11 +42,11 @@ public class BalanceActivity extends AppCompatActivity {
         this.childrenList = childrenList;
     }
 
-    private ArrayAdapter<ChildBalanceViewModel> getChildrenAdapter() {
+    private ChildBalanceAdapter getChildrenAdapter() {
         return childrenAdapter;
     }
 
-    private void setChildrenAdapter(ArrayAdapter<ChildBalanceViewModel> childrenAdapter) {
+    private void setChildrenAdapter(ChildBalanceAdapter childrenAdapter) {
         this.childrenAdapter = childrenAdapter;
     }
 
