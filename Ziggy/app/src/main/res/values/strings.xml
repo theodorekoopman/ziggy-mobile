@@ -4,6 +4,8 @@
     <!-- titles -->
     <string name="login_title">Secure Login.</string>
     <string name="balances_title">Hello Mr. X</string>
+    <string name="transfers_title">Ready To Transfer</string>
+
 
     <!-- labels -->
     <string name="password_label">Password</string>
@@ -11,6 +13,7 @@
     <!-- captions -->
     <string name="login_page_description">Please log in with your Investec Online Password.</string>
     <string name="login_button_caption">Login</string>
+    <string name="transfers_title_description">Hang in there, you are about to get some moola.</string>
 
     <!-- hints -->
     <string name="password_edit_hint">Password</string>
