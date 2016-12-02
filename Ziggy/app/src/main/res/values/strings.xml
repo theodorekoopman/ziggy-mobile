@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Ziggy</string>
-    <string name="balanceTitle"></string>
+
+    <!-- titles -->
+    <string name="login_title">Secure Login.</string>
+    <string name="balances_title">Hello Mr. X</string>
+
+    <!-- labels -->
+    <string name="password_label">Password</string>
+
+    <!-- captions -->
+    <string name="login_page_description">Please log in with your Investec Online Password.</string>
+    <string name="login_button_caption">Login</string>
+
+    <!-- hints -->
+    <string name="password_edit_hint">Password</string>
 </resources>
