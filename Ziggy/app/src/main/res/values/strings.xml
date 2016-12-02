@@ -9,11 +9,14 @@
 
     <!-- labels -->
     <string name="password_label">Password</string>
+    <string name="investec_account_label">Investec Account</string>
+    <string name="available_balance_label">Available Balance</string>
 
     <!-- captions -->
     <string name="login_page_description">Please log in with your Investec Online Password.</string>
     <string name="login_button_caption">Login</string>
     <string name="transfers_title_description">Hang in there, you are about to get some moola.</string>
+    <string name="make_payment_caption">Make a Payment</string>
 
     <!-- hints -->
     <string name="password_edit_hint">Password</string>
