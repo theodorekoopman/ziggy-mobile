@@ -1,0 +1,18 @@
+{
+  "name": "mockserver",
+  "version": "1.0.0",
+  "description": "mock server for ziggy hackathon",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "typings": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node server.js"
+  },
+  "author": "Investec Compliance IT",
+  "license": "ISC"
+}

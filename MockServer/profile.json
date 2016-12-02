@@ -1,0 +1,64 @@
+{
+    "name": "Big Daddy",
+    "accountNumber": "12345",
+    "balance": 1000000,
+    "children": [{
+        "name": "Meekah",
+        "age": 5,
+        "balance": 1000,
+        "photoid": "meekah",
+        "goals": [{
+                "name": "x-box",
+                "value": 4999,
+                "imageurl": "/path",
+                "goalbalance": 4000,
+                "goalpercent": 80
+            }, {
+                "name": "barbie",
+                "value": 500,
+                "imageurl": "/path",
+                "goalbalance": 100,
+                "goalpercent": 90
+            }
+        ]
+    },{
+        "name": "Kayleb",
+        "age": 1,
+        "balance": 1000,
+        "photoid": "kayleb",
+        "goals": [{
+                "name": "ps 4",
+                "value": 8999,
+                "imageurl": "/path",
+                "goalbalance": 4000,
+                "goalpercent": 50
+            }
+        ]
+    },{
+        "name": "Amelia",
+        "age": 17,
+        "balance": 1000,
+        "photoid": "amelia",
+        "goals": [{
+                "name": "iphone",
+                "value": 8000,
+                "imageurl": "/path",
+                "goalbalance": 800,
+                "goalpercent": 80
+            }
+        ]
+    }],
+    "chores": [{
+        "name": "washing car",
+        "value": 60,
+        "photoid": "washingcar"
+    },{
+        "name": "sweeping",
+        "value": 20,
+        "photoid": "sweep"
+    },{
+        "name": "homework",
+        "value": 10,
+        "photoid": "homework"
+    }]
+}

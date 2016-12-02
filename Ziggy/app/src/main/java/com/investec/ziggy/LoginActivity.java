@@ -9,14 +9,24 @@ import com.investec.ziggy.listeners.LoginButtonListener;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText password = (EditText) findViewById(R.id.password);
+        this.setPassword((EditText) findViewById(R.id.password));
         Button loginButton = (Button) findViewById(R.id.login_button);
 
         loginButton.setOnClickListener( new LoginButtonListener(this) );
+    }
+
+    public EditText getPassword() {
+        return password;
+    }
+
+    private void setPassword(EditText password) {
+        this.password = password;
     }
 }
