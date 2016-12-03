@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.investec.ziggy.TransferActivity;
+import com.investec.ziggy.common.PortfolioManager;
 
 /**
  * Created by Theodore.Koopman on 2016/12/02.
@@ -28,6 +29,8 @@ public class ChildSelectionListener implements AdapterView.OnItemClickListener{
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        PortfolioManager.getInstance().setSelectedChild( PortfolioManager.getInstance().getPortfolio().getChildAccounts().get(i) );
+
         Intent intent = new Intent( this.getActivity(), TransferActivity.class );
         this.getActivity().startActivity(intent);
     }
