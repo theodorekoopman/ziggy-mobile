@@ -38,7 +38,7 @@ public class BalanceActivityTest {
 
     @Test
     public void shouldDisplayAccountNumber() {
-        onView(withId(R.id.accountNumber)).check(matches(isDisplayed()));
+        onView(withId(R.id.accountnumber)).check(matches(isDisplayed()));
     }
 
     @Test

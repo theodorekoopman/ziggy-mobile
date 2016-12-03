@@ -1,27 +1,42 @@
 
 package com.investec.ziggy.models.portfoliomodels;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class ChildAccount {
 
-    private Object selectedGoal;
+    @SerializedName("SelectedGoal")
+    @Expose
+    private SelectedGoal selectedGoal;
+    @SerializedName("ID")
+    @Expose
     private Integer iD;
+    @SerializedName("AccountNumber")
+    @Expose
     private Integer accountNumber;
+    @SerializedName("Name")
+    @Expose
     private String name;
+    @SerializedName("UserName")
+    @Expose
     private String userName;
+    @SerializedName("Password")
+    @Expose
     private String password;
+    @SerializedName("Balance")
+    @Expose
     private Integer balance;
+    @SerializedName("ParentAccountID")
+    @Expose
     private Integer parentAccountID;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
      *     The selectedGoal
      */
-    public Object getSelectedGoal() {
+    public SelectedGoal getSelectedGoal() {
         return selectedGoal;
     }
 
@@ -30,7 +45,7 @@ public class ChildAccount {
      * @param selectedGoal
      *     The SelectedGoal
      */
-    public void setSelectedGoal(Object selectedGoal) {
+    public void setSelectedGoal(SelectedGoal selectedGoal) {
         this.selectedGoal = selectedGoal;
     }
 
@@ -158,14 +173,6 @@ public class ChildAccount {
      */
     public void setParentAccountID(Integer parentAccountID) {
         this.parentAccountID = parentAccountID;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

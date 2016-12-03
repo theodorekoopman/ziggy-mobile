@@ -46,11 +46,8 @@ public class BaseRest<TRequest, TResponse> {
         JSONObject jsonParams = new JSONObject();
         Gson gson = new Gson();
         String instanceJson = gson.toJson(instance);
-
-
-        //jsonParams.put("DynamicClass", instanceJson);
-
         StringEntity entity = new StringEntity(instanceJson);
+
         try {
             AsyncHttpClient client = new AsyncHttpClient();
             client.post(this.getActivity(), url, entity, "application/json", handler);

@@ -1,19 +1,32 @@
 
 package com.investec.ziggy.models.portfoliomodels;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class ParentAccount {
 
+    @SerializedName("ID")
+    @Expose
     private Integer iD;
+    @SerializedName("AccountNumber")
+    @Expose
     private Integer accountNumber;
+    @SerializedName("Name")
+    @Expose
     private String name;
+    @SerializedName("UserName")
+    @Expose
     private String userName;
+    @SerializedName("Password")
+    @Expose
     private String password;
+    @SerializedName("Balance")
+    @Expose
     private Integer balance;
+    @SerializedName("ParentAccountID")
+    @Expose
     private Object parentAccountID;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
@@ -139,14 +152,6 @@ public class ParentAccount {
      */
     public void setParentAccountID(Object parentAccountID) {
         this.parentAccountID = parentAccountID;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

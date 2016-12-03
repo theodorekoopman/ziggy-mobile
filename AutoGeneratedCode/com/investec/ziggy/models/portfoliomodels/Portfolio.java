@@ -2,19 +2,26 @@
 package com.investec.ziggy.models.portfoliomodels;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.annotation.Generated;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
 public class Portfolio {
 
+    @SerializedName("ParentAccount")
+    @Expose
     private ParentAccount parentAccount;
+    @SerializedName("ChildAccounts")
+    @Expose
     private List<ChildAccount> childAccounts = new ArrayList<ChildAccount>();
-    private Object chores;
+    @SerializedName("Chores")
+    @Expose
+    private List<Chore> chores = new ArrayList<Chore>();
+    @SerializedName("ZiggyError")
+    @Expose
     private Object ziggyError;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
@@ -57,7 +64,7 @@ public class Portfolio {
      * @return
      *     The chores
      */
-    public Object getChores() {
+    public List<Chore> getChores() {
         return chores;
     }
 
@@ -66,7 +73,7 @@ public class Portfolio {
      * @param chores
      *     The Chores
      */
-    public void setChores(Object chores) {
+    public void setChores(List<Chore> chores) {
         this.chores = chores;
     }
 
@@ -86,14 +93,6 @@ public class Portfolio {
      */
     public void setZiggyError(Object ziggyError) {
         this.ziggyError = ziggyError;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

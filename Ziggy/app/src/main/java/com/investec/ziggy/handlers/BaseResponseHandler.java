@@ -4,9 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.investec.ziggy.BalanceActivity;
 import com.investec.ziggy.common.BaseRest;
+import com.investec.ziggy.common.StringDeserializer;
+import com.investec.ziggy.models.portfoliomodels.Portfolio;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.nio.charset.StandardCharsets;
@@ -34,7 +38,9 @@ public class BaseResponseHandler<T> extends AsyncHttpResponseHandler {
         setResponseText(new String(responseBody, StandardCharsets.UTF_8));
 
         Gson gson = new Gson();
-        this.setInstance(gson.fromJson(responseText, getClassType()));
+        T temp = gson.fromJson(responseText, getClassType());
+
+        this.setInstance(temp);
     }
 
 
