@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.investec.ziggy.BalanceActivity"
+    android:background="#ffffff"
     android:weightSum="1">
 
     <TextView
@@ -17,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/balances_title"
+        android:textColor="#000000"
         android:textSize="16pt"/>
 
     <LinearLayout
@@ -27,33 +29,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/investec_account_label"/>
+            android:text="@string/investec_account_label"
+            android:textSize="10pt"/>
 
         <TextView
             android:id="@+id/accountnumber"
             android:textAlignment="textEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:textColor="#000000"
+            android:textSize="10pt"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="45px">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/available_balance_label"/>
+            android:text="@string/available_balance_label"
+            android:textSize="10pt"/>
 
         <TextView
             android:id="@+id/parentBalance"
             android:textAlignment="textEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:textSize="10pt"
+            android:textColor="#000000"/>
 
     </LinearLayout>
 
@@ -62,7 +69,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="@string/make_payment_caption"
-        android:textSize="12pt"/>
+        android:textSize="12pt"
+        android:layout_marginBottom="35px"/>
 
     <ListView
         android:id="@+id/children"

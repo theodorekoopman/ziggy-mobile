@@ -2,14 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_margin="25px"
+    android:background="#ffffff">
 
     <ImageView
         android:id="@+id/photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxHeight="32px"
-        android:maxWidth="32px"/>
+        android:maxWidth="32px"
+        android:layout_margin="5px"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +23,10 @@
             android:id="@+id/childName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Amelia"/>
+            android:text="Amelia"
+            android:layout_marginBottom="10px"
+            android:textSize="13pt"
+            android:textColor="@color/colorBlue"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,14 +36,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/available_balance_label"/>
+                android:text="@string/available_balance_label"
+                android:textSize="10pt"/>
 
             <TextView
                 android:id="@+id/childBalance"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textEnd"
-                android:text="R1000"/>
+                android:text="R1000"
+                android:textSize="10pt"/>
 
         </LinearLayout>
 

@@ -40,16 +40,15 @@ public class ChoreClickListener implements AdapterView.OnItemClickListener {
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         BaseRest<TransferModel, String> portfolioRequest = new BaseRest<>(this.getActivity());
 
         try {
-
             Portfolio portfolio = PortfolioManager.getInstance().getPortfolio();
             int parentAccountId = (Integer)portfolio.getParentAccount().getID();
             int childAccountId = PortfolioManager.getInstance().getSelectedChild().getID();
             int goalId = PortfolioManager.getInstance().getSelectedChild().getSelectedGoal().getID();
-            Chore chore = PortfolioManager.getInstance().getPortfolio().getChores().get(i);
+            Chore chore = PortfolioManager.getInstance().getPortfolio().getChores().get(position);
 
             TransferModel transferModel = new TransferModel();
             transferModel.setFromAccountId(parentAccountId);
@@ -57,7 +56,7 @@ public class ChoreClickListener implements AdapterView.OnItemClickListener {
             transferModel.setAmount(chore.getAmount());
             transferModel.setGoalId(goalId);
 
-            portfolioRequest.post("http://192.168.0.108:9810/api/transfer", transferModel, new TransferResponseHandler(this.getActivity()));
+            portfolioRequest.post("http://192.168.0.103:9810/api/transfer", transferModel, new TransferResponseHandler(this.getActivity()));
 
         } catch (JSONException e) {
             e.printStackTrace();

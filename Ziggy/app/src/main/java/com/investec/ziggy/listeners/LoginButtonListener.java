@@ -42,7 +42,7 @@ public class LoginButtonListener implements View.OnClickListener {
             LoginModel loginModel = new LoginModel();
             loginModel.setUsername(username);
             loginModel.setPassword(password);
-            portfolioRequest.post("http://192.168.0.108:9810/api/login", loginModel, new LoginResponseHandler(this.getActivity()));
+            portfolioRequest.post("http://192.168.0.103:9810/api/login", loginModel, new LoginResponseHandler(this.getActivity()));
 
         } catch (JSONException e) {
             e.printStackTrace();

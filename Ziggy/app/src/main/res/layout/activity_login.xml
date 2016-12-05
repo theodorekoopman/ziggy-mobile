@@ -9,24 +9,42 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.investec.ziggy.LoginActivity"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:text="@string/login_title"
+            android:layout_gravity="center"
             android:textSize="14pt"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxHeight="84px"
+            android:maxWidth="84px"
+            android:background="@drawable/ziggy2"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_page_description"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginBottom="50px"/>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/password"
@@ -35,10 +53,62 @@
         android:inputType="textPassword"
         android:hint="@string/password_edit_hint"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="52dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/need_assistance_caption"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="32px"
+                    android:maxWidth="32px"
+                    android:background="@drawable/zaflag"/>
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:maxHeight="16px"
+                    android:maxWidth="16px"
+                    android:background="@mipmap/ic_phone"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telephone_number_caption"
+                    android:textAlignment="textEnd"
+                    android:gravity="end"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_button_caption"/>
+        android:text="@string/login_button_caption"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="35dp"
+        android:background="@color/colorBlue"/>
 
 </LinearLayout>
