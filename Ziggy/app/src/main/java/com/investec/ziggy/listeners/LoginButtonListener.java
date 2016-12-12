@@ -3,6 +3,7 @@ package com.investec.ziggy.listeners;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.investec.ziggy.BalanceActivity;
@@ -10,6 +11,7 @@ import com.investec.ziggy.LoginActivity;
 import com.investec.ziggy.R;
 import com.investec.ziggy.apimodels.LoginModel;
 import com.investec.ziggy.common.BaseRest;
+import com.investec.ziggy.common.PortfolioManager;
 import com.investec.ziggy.handlers.LoginResponseHandler;
 import com.investec.ziggy.models.portfoliomodels.Portfolio;
 
@@ -30,25 +32,14 @@ public class LoginButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        BaseRest<LoginModel, Portfolio> portfolioRequest = new BaseRest<>(this.getActivity());
+        EditText editText =  ((LoginActivity)getActivity()).getPassword();
+        Button button = (Button)((LoginActivity)getActivity()).findViewById(R.id.login_button);
+        button.setEnabled(false);
+        String password = editText.getText().toString();
 
-        try {
-            String username = "devendran";
-            String password = "";
-
-            EditText editText =  ((LoginActivity)getActivity()).getPassword();
-            password = editText.getText().toString();
-
-            LoginModel loginModel = new LoginModel();
-            loginModel.setUsername(username);
-            loginModel.setPassword(password);
-            portfolioRequest.post("http://192.168.0.103:9810/api/login", loginModel, new LoginResponseHandler(this.getActivity()));
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        PortfolioManager.getInstance().setLoginButton(button);
+        PortfolioManager.getInstance().setPassword(password);
+        PortfolioManager.getInstance().load(this.getActivity(),new LoginResponseHandler(this.getActivity()));
     }
 
     private Context getActivity() {

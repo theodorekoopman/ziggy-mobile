@@ -29,6 +29,7 @@ public class TransferResponseHandler extends BaseResponseHandler<TransferModel> 
         setResponseText(new String(responseBody, StandardCharsets.UTF_8));
 
         Toast.makeText(this.getActivity(), "Transfer Successful", Toast.LENGTH_LONG).show();
+        PortfolioManager.getInstance().load(this.getActivity(), new DataRefreshHandler(this.getActivity()));
     }
 
 

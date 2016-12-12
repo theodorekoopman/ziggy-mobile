@@ -11,6 +11,7 @@ import com.investec.ziggy.apimodels.LoginModel;
 import com.investec.ziggy.apimodels.TransferModel;
 import com.investec.ziggy.common.BaseRest;
 import com.investec.ziggy.common.PortfolioManager;
+import com.investec.ziggy.handlers.DataRefreshHandler;
 import com.investec.ziggy.handlers.LoginResponseHandler;
 import com.investec.ziggy.handlers.TransferResponseHandler;
 import com.investec.ziggy.models.portfoliomodels.Chore;
@@ -41,7 +42,7 @@ public class ChoreClickListener implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        BaseRest<TransferModel, String> portfolioRequest = new BaseRest<>(this.getActivity());
+        BaseRest<TransferModel, String> transferRequeset = new BaseRest<>(this.getActivity());
 
         try {
             Portfolio portfolio = PortfolioManager.getInstance().getPortfolio();
@@ -56,8 +57,8 @@ public class ChoreClickListener implements AdapterView.OnItemClickListener {
             transferModel.setAmount(chore.getAmount());
             transferModel.setGoalId(goalId);
 
-            portfolioRequest.post("http://192.168.0.103:9810/api/transfer", transferModel, new TransferResponseHandler(this.getActivity()));
-
+            String address = "http://" + PortfolioManager.getInstance().getServerAddress() + "/api/transfer";
+            transferRequeset.post(address, transferModel, new TransferResponseHandler(this.getActivity()));
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
